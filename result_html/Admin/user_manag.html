@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="C:\Users\ACER\OneDrive\Desktop\FRONT END\RESULT\Admin\usermanage.css">
+</head>
+<body>
+
+  <h2>User Registration Form</h2>
+
+  <form id="registrationForm">
+    <label for="name">Full Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="role">Role:</label><br>
+    <select id="role" name="role" required>
+      <option value="">Select Role</option>
+      <option value="student">Student</option>
+      <option value="teacher">Teachers</option>
+      <option value="others">Others</option>
+    </select><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <input type="submit" value="Register">
+  </form>
+
+  <h2>Registered Users</h2>
+
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- New users will be added here -->
+    </tbody>
+  </table>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const tableBody = document.querySelector('#userTable tbody');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent page reload
+
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const role = document.getElementById('role').value;
+
+      // Create new row
+      const row = document.createElement('tr');
+
+      row.innerHTML = `
+        <td>${name}</td>
+        <td>${email}</td>
+        <td>${role}</td>
+        <td>
+          <button onclick="editRow(this)">Edit</button>
+          <button onclick="deleteRow(this)">Delete</button>
+        </td>
+      `;
+
+      tableBody.appendChild(row);
+
+      form.reset(); // Clear form
+    });
+
+    function deleteRow(button) {
+      const row = button.parentElement.parentElement;
+      row.remove();
+    }
+
+    function editRow(button) {
+      const row = button.parentElement.parentElement;
+      const cells = row.querySelectorAll('td');
+
+      document.getElementById('name').value = cells[0].textContent;
+      document.getElementById('email').value = cells[1].textContent;
+      document.getElementById('role').value = cells[2].textContent;
+
+      row.remove(); // Remove old row so it can be re-added after editing
+    }
+  </script>
+
+</body>
+</html>

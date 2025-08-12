@@ -1,0 +1,103 @@
+/* General page styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  padding: 40px;
+  color: #333;
+}
+
+/* Headings */
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+/* Form container */
+form {
+  max-width: 1000px;
+  margin: auto;
+  background-color: #8a99b3;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Each label/input pair */
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 200px;
+}
+
+/* Inputs and select */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Submit button */
+input[type="submit"] {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  flex: 1 1 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+/* Table styling */
+table {
+  width: 90%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  background-color: #834e4e;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  background-color: #3498db;
+  color: rgb(167, 94, 94);
+}
+
+/* Action buttons */
+button {
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #d35400;
+}

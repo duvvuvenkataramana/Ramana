@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* A light grey background for a clean look */
+    color: #333;
+}
+
+.container {
+    padding: 40px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Space between the floating cards */
+}
+
+.dashboard-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 200px; /* Adjust the width of each card */
+    height: 180px; /* Keep a consistent height for all cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer; /* Changes cursor to indicate it's clickable */
+}
+
+.dashboard-item:hover {
+    transform: translateY(-10px); /* Lifts the card on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-item img {
+    width: 100px; /* Icon size */
+    height: 100px; /* Icon size */
+    object-fit: contain;
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.dashboard-item p {
+    font-size: 1em;
+    font-weight: bold;
+    color: #555;
+    margin: 0;
+}
